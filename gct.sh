@@ -11,7 +11,6 @@ fi
 # parse branch name since we know it's a git repo
 BRANCH=`echo $RAW | grep "*" | sed s/*\ //`
 
-
 # load remotes just to ensure we have a remote branch we
 # want to push to. right now we default to origin however
 # maybe we want to add another argument to override that
