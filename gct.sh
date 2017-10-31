@@ -9,7 +9,7 @@ if [ $? -gt 0 ]; then
 fi
 
 # parse branch name since we know it's a git repo
-BRANCH=`echo $RAW | grep "*" | sed s/*\ //`
+BRANCH=`git branch | grep "*" | sed s/*\ //`
 
 # load remotes just to ensure we have a remote branch we
 # want to push to. right now we default to origin however
@@ -29,8 +29,6 @@ fi
 # add everything and commit
 git add .
 git commit -m "$MSG"
-
-echo $BRANCH
 
 # deploy changes to origin remote with whatever branch name
 # we are currently on
