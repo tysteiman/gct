@@ -30,6 +30,8 @@ fi
 git add .
 git commit -m "$MSG"
 
+echo $BRANCH
+
 # deploy changes to origin remote with whatever branch name
 # we are currently on
 if [ "$REMOTES" ]; then
