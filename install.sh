@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# symlink our script to /usr/local/bin/gct
+
 GCT=$PWD/gct.sh
 TARGET=/usr/local/bin/gct
 
