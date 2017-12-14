@@ -26,8 +26,13 @@ if [ ! "$MSG" ]; then
     exit
 fi
 
-# add everything and commit
-git add .
+# add everything and commit unless $2 is true
+# which means we want to preserve the integrity
+# of stage and only commit staged files.
+if [ ! $2 ] || [ "$2" != "true" ]; then
+    git add .
+fi
+
 git commit -m "$MSG"
 
 # deploy changes to origin remote with whatever branch name
